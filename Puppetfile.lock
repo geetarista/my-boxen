@@ -34,6 +34,11 @@ GITHUBTARBALL
     chrome (1.0.0)
 
 GITHUBTARBALL
+  remote: boxen/puppet-daisy_disk
+  specs:
+    daisy_disk (1.0.0)
+
+GITHUBTARBALL
   remote: boxen/puppet-dnsmasq
   specs:
     dnsmasq (1.0.0)
@@ -187,11 +192,6 @@ GITHUBTARBALL
   remote: cprice-puppet/puppetlabs-inifile
   specs:
     inifile (0.9.0)
-
-GITHUBTARBALL
-  remote: geetarista/puppet-daisy_disk
-  specs:
-    daisy_disk (1.0.0)
 
 GITHUBTARBALL
   remote: geetarista/puppet-flowdock
