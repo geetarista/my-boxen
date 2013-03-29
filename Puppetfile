@@ -60,7 +60,7 @@ github "sparrow",        "1.0.0"
 github "sublime_text_2", "1.1.0"
 github "swig",           "1.0.0" # Needed for somthing--dunno
 github "vagrant",        "2.0.3"
-github "virtualbox",     "1.0.0"
+github "virtualbox",     "1.0.1"
 github "viscosity",      "1.0.0"
 github "vlc",            "1.0.0"
 github "xquartz",        "1.0.0"

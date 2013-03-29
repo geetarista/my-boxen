@@ -171,7 +171,7 @@ GITHUBTARBALL
 GITHUBTARBALL
   remote: boxen/puppet-virtualbox
   specs:
-    virtualbox (1.0.0)
+    virtualbox (1.0.1)
 
 GITHUBTARBALL
   remote: boxen/puppet-viscosity
@@ -252,7 +252,7 @@ DEPENDENCIES
   sudo (= 1.0.0)
   swig (= 1.0.0)
   vagrant (= 2.0.3)
-  virtualbox (= 1.0.0)
+  virtualbox (= 1.0.1)
   viscosity (= 1.0.0)
   vlc (= 1.0.0)
   xquartz (= 1.0.0)
