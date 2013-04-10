@@ -94,6 +94,11 @@ GITHUBTARBALL
     macvim (1.0.0)
 
 GITHUBTARBALL
+  remote: boxen/puppet-minecraft
+  specs:
+    minecraft (1.0.1)
+
+GITHUBTARBALL
   remote: boxen/puppet-mplayerx
   specs:
     mplayerx (1.0.0)
@@ -229,6 +234,7 @@ DEPENDENCIES
   inifile (= 0.9.0)
   istatmenus4 (= 1.0.0)
   macvim (= 1.0.0)
+  minecraft (= 1.0.1)
   mplayerx (= 1.0.0)
   nginx (= 1.1.0)
   nodejs (= 2.1.0)

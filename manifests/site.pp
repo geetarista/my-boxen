@@ -105,6 +105,7 @@ node default {
   }
   include istatmenus4
   include macvim
+  include minecraft
   include mplayerx
   include propane
   include python

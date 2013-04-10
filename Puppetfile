@@ -47,6 +47,7 @@ github "flowdock",       "1.0.0"
 github "graphviz",       "1.0.0"
 github "istatmenus4",    "1.0.0"
 github "macvim",         "1.0.0"
+github "minecraft",      "1.0.1"
 github "mplayerx",       "1.0.0"
 github "pcre",           "1.0.0" # Needed for graphviz
 github "pkgconfig",      "1.0.0" # Needed for somthing--dunno
