@@ -54,7 +54,6 @@ node default {
   include git
   # include hub
   include nginx
-  include nvm
   include ruby
 
   # fail if FDE is not enabled
@@ -63,7 +62,7 @@ node default {
   }
 
   # node versions
-  include nodejs::0-8
+  include nodejs::global
 
   # default ruby versions
   include ruby::1_8_7

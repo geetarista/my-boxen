@@ -96,12 +96,7 @@ GITHUBTARBALL
 GITHUBTARBALL
   remote: boxen/puppet-nodejs
   specs:
-    nodejs (1.0.0)
-
-GITHUBTARBALL
-  remote: boxen/puppet-nvm
-  specs:
-    nvm (1.0.0)
+    nodejs (2.1.0)
 
 GITHUBTARBALL
   remote: boxen/puppet-pcre
@@ -236,8 +231,7 @@ DEPENDENCIES
   macvim (= 1.0.0)
   mplayerx (= 1.0.0)
   nginx (= 1.1.0)
-  nodejs (= 1.0.0)
-  nvm (= 1.0.0)
+  nodejs (= 2.1.0)
   pcre (= 1.0.0)
   pkgconfig (= 1.0.0)
   propane (= 1.0.0)
