@@ -49,6 +49,11 @@ GITHUBTARBALL
     dropbox (1.1.0)
 
 GITHUBTARBALL
+  remote: boxen/puppet-flowdock
+  specs:
+    flowdock (1.0.0)
+
+GITHUBTARBALL
   remote: boxen/puppet-fluid
   specs:
     fluid (1.0.0)
@@ -87,6 +92,11 @@ GITHUBTARBALL
   remote: boxen/puppet-macvim
   specs:
     macvim (1.0.0)
+
+GITHUBTARBALL
+  remote: boxen/puppet-mplayerx
+  specs:
+    mplayerx (1.0.0)
 
 GITHUBTARBALL
   remote: boxen/puppet-nginx
@@ -184,24 +194,14 @@ GITHUBTARBALL
     xquartz (1.0.0)
 
 GITHUBTARBALL
+  remote: boxen/puppet-xscope
+  specs:
+    xscope (1.0.0)
+
+GITHUBTARBALL
   remote: cprice-puppet/puppetlabs-inifile
   specs:
     inifile (0.9.0)
-
-GITHUBTARBALL
-  remote: geetarista/puppet-flowdock
-  specs:
-    flowdock (1.0.0)
-
-GITHUBTARBALL
-  remote: geetarista/puppet-mplayerx
-  specs:
-    mplayerx (1.0.0)
-
-GITHUBTARBALL
-  remote: geetarista/puppet-xscope
-  specs:
-    xscope (1.0.0)
 
 GITHUBTARBALL
   remote: puppetlabs/puppetlabs-stdlib
