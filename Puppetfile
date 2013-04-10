@@ -45,7 +45,7 @@ github "fluid",          "1.0.0"
 github "flux",           "0.0.1"
 github "flowdock",       "1.0.0"
 github "graphviz",       "1.0.0"
-github "istatmenus4",    "1.0.1", :repo => "archfear/puppet-istatmenus4"
+github "istatmenus4",    "1.0.0"
 github "macvim",         "1.0.0"
 github "mplayerx",       "1.0.0"
 github "pcre",           "1.0.0" # Needed for graphviz

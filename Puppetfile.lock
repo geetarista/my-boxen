@@ -1,9 +1,4 @@
 GITHUBTARBALL
-  remote: archfear/puppet-istatmenus4
-  specs:
-    istatmenus4 (1.0.1)
-
-GITHUBTARBALL
   remote: boxen/puppet-adium
   specs:
     adium (1.0.1)
@@ -87,6 +82,11 @@ GITHUBTARBALL
   remote: boxen/puppet-hub
   specs:
     hub (1.0.0)
+
+GITHUBTARBALL
+  remote: boxen/puppet-istatmenus4
+  specs:
+    istatmenus4 (1.0.0)
 
 GITHUBTARBALL
   remote: boxen/puppet-macvim
@@ -227,7 +227,7 @@ DEPENDENCIES
   homebrew (= 1.1.2)
   hub (= 1.0.0)
   inifile (= 0.9.0)
-  istatmenus4 (= 1.0.1)
+  istatmenus4 (= 1.0.0)
   macvim (= 1.0.0)
   mplayerx (= 1.0.0)
   nginx (= 1.1.0)
