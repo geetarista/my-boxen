@@ -107,6 +107,7 @@ node default {
     user => $luser,
   }
   include istatmenus4
+  include java
   include macvim
   include minecraft
   include mplayerx
