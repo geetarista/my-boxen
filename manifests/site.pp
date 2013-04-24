@@ -104,9 +104,6 @@ node default {
   }
   include graphviz
   include handbrake
-  class { 'hexcolorpicker':
-    user => $luser,
-  }
   include istatmenus4
   include java
   include macvim
