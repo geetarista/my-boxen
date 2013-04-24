@@ -74,6 +74,11 @@ GITHUBTARBALL
     graphviz (1.0.0)
 
 GITHUBTARBALL
+  remote: boxen/puppet-handbrake
+  specs:
+    handbrake (1.0.0)
+
+GITHUBTARBALL
   remote: boxen/puppet-homebrew
   specs:
     homebrew (1.1.2)
@@ -234,6 +239,7 @@ DEPENDENCIES
   gcc (= 1.0.0)
   git (= 1.0.0)
   graphviz (= 1.0.0)
+  handbrake (= 1.0.0)
   homebrew (= 1.1.2)
   hub (= 1.0.0)
   inifile (= 0.9.0)

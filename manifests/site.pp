@@ -103,6 +103,7 @@ node default {
     install_options => '--cross-compile-all',
   }
   include graphviz
+  include handbrake
   class { 'hexcolorpicker':
     user => $luser,
   }
