@@ -205,50 +205,6 @@ node default {
     require => Repository['dotjs'],
   }
 
-  ### User defaults ###
-
-  Defaults {
-    user => $luser
-  }
-
-  ## General ##
-
-  defaults { 'Disable "Are you sure?" prompt for applications':
-    domain => 'com.apple.LaunchServices',
-    key    => 'LSQuarantine',
-    value  => false,
-  }
-
-  ## Keyboard ##
-
-  defaults { 'Tab through all form controls':
-    domain => 'NSGlobalDomain',
-    key    => 'AppleKeyboardUIMode',
-    value  => 3,
-  }
-
-  ## Screenshots ##
-
-  defaults { 'Store screenshots in ~/Downloads':
-    domain => 'com.apple.screencapture',
-    key    => 'location',
-    value  => "${user_home}/Downloads",
-  }
-
-  ## Battery ##
-
-  # defaults { 'Restrict menu bar':
-  #   domain => 'com.apple.systemuiserver',
-  #   key    => 'menuExtras',
-  #   value  => [
-  #     '/Library/Application Support/iStat Menus 4/extras/iStatMenusCombined.menu',
-  #     '/Library/Application Support/iStat Menus 4/extras/MenuCracker.menu',
-  #     '/System/Library/CoreServices/Menu Extras/AirPort.menu',
-  #     '/System/Library/CoreServices/Menu Extras/Volume.menu',
-  #     '/System/Library/CoreServices/Menu Extras/Clock.menu',
-  #   ],
-  # }
-
   ### Meslo ###
 
   # https://github.com/Lokaltog/powerline-fonts/tree/master/Meslo
