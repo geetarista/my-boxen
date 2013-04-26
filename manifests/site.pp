@@ -90,6 +90,7 @@ node default {
       'gnu-tar',
       'mercurial',
       'the_silver_searcher',
+      'tree',
       'wget',
     ]:
   }
