@@ -63,8 +63,14 @@ node default {
 
   # node versions
   include nodejs::global
-  nodejs::module { ['coffee-script', 'mocha']:
-    node_version => 'v0.10'
+  Nodejs::Module {
+    node_version => 'v0.10',
+  }
+  nodejs::module { 'coffee-script':
+    ensure       => '1.6.2',
+  }
+  nodejs::module { 'mocha':
+    ensure       => '1.9.0',
   }
 
   # default ruby versions
