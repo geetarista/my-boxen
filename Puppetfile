@@ -52,7 +52,7 @@ github "macvim",         "1.0.0"
 github "minecraft",      "1.0.1"
 github "mplayerx",       "1.0.0"
 github "pcre",           "1.0.0" # Needed for graphviz
-github "pkgconfig",      "1.0.0" # Needed for somthing--dunno
+github "pkgconfig",      "1.0.0" # Lots of modules depend on this
 github "propane",        "1.0.0"
 github "python",         "1.1.0"
 github "repository",     "1.0.0"
