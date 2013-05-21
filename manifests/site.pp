@@ -89,6 +89,7 @@ node default {
       'findutils',
       'gnu-tar',
       'mercurial',
+      's3cmd',
       'the_silver_searcher',
       'tree',
       'wget',
