@@ -112,6 +112,7 @@ node default {
   }
   include graphviz
   include handbrake
+  include heroku
   include istatmenus4
   include java
   include macvim
