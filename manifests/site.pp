@@ -92,6 +92,7 @@ node default {
       's3cmd',
       'the_silver_searcher',
       'tree',
+      'visionmedia-watch',
       'wget',
     ]:
   }
