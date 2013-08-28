@@ -5,7 +5,7 @@ require gcc
 Exec {
   group       => 'staff',
   logoutput   => on_failure,
-  user        => $luser,
+  user        => $boxen_user,
 
   path => [
     "${boxen::config::home}/rbenv/shims",
@@ -20,13 +20,13 @@ Exec {
 
   environment => [
     "HOMEBREW_CACHE=${homebrew::config::cachedir}",
-    "HOME=/Users/${::luser}"
+    "HOME=/Users/${::boxen_user}"
   ]
 }
 
 File {
   group => 'staff',
-  owner => $luser
+  owner => $boxen_user
 }
 
 Package {
@@ -39,7 +39,10 @@ Repository {
   extra    => [
     '--recurse-submodules'
   ],
-  require  => Class['git']
+  require  => File["${boxen::config::bindir}/boxen-git-credential"],
+  config   => {
+    'credential.helper' => "${boxen::config::bindir}/boxen-git-credential"
+  }
 }
 
 Service {
@@ -48,12 +51,18 @@ Service {
 
 Homebrew::Formula <| |> -> Package <| |>
 
+# My overrides
+
+Git::Config::Global <| title == "core.excludesfile" |> {
+  value => "~/.gitignore",
+}
+
 node default {
   # core modules, needed for most things
   # include dnsmasq
   include git
   # include hub
-  include nginx
+  # include nginx
   include ruby
 
   # fail if FDE is not enabled
@@ -62,23 +71,22 @@ node default {
   }
 
   # node versions
-  include nodejs::global
+  include nodejs::v0_10
   Nodejs::Module {
     node_version => 'v0.10',
   }
-  nodejs::module { 'coffee-script':
-    ensure       => '1.6.2',
-  }
-  nodejs::module { 'mocha':
-    ensure       => '1.9.0',
-  }
+  $node_modules = [
+    'coffee-script',
+    'mocha',
+  ]
+  nodejs::module { $node_modules: }
 
   # default ruby versions
   include ruby::1_8_7
   include ruby::1_9_3
   include ruby::2_0_0
   class { 'ruby::global':
-    version => '1.9.3'
+    version => '2.0.0'
   }
 
   # common, useful packages
@@ -104,9 +112,9 @@ node default {
   include chrome::dev
   include daisy_disk::1
   include dropbox
-  include fluid
+  # include fluid
   include flux
-  include flowdock
+  # include flowdock
   package { 'go':
     ensure          => installed,
     install_options => '--cross-compile-all',
@@ -116,15 +124,22 @@ node default {
   include heroku
   include istatmenus4
   include java
-  include macvim
-  include minecraft
+  package { 'macvim':
+    ensure          => installed,
+    install_options => [
+      '--override-system-vim',
+      '--with-lua',
+      '--with-cscope',
+    ];
+  }
+  # include minecraft
   include mplayerx
-  include propane
+  # include propane
   include python
   include rdio
   include skype
-  include sparrow
-  include sublime_text_2
+  # include sparrow
+  # include sublime_text_2
   include vagrant
   # vagrant::plugin { 'vagrant-vmware-fusion':
   #   license => 'puppet:///modules/fusion.lic',
@@ -135,8 +150,7 @@ node default {
   include xscope::2
 
   $system_rake = '/Library/Ruby/Gems/1.8/gems/rake-10.0.3/bin/rake'
-  $user_home = "/Users/${luser}"
-  $user_src = "${user_home}/src"
+  $user_home = "/Users/${boxen_user}"
 
   file { '/usr/local':
     ensure => directory,
@@ -145,10 +159,6 @@ node default {
   file { '/usr/local/bin':
     ensure => directory,
   }
-
-  # file { $user_src:
-  #   ensure => directory,
-  # }
 
   ### SSH ###
   $ssh_dir = "${user_home}/.ssh"
