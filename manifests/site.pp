@@ -110,11 +110,10 @@ node default {
   include appcleaner
   include caffeine
   include chrome::dev
+  include cloudapp
   include daisy_disk::1
   include dropbox
-  # include fluid
   include flux
-  # include flowdock
   package { 'go':
     ensure          => installed,
     install_options => '--cross-compile-all',
@@ -122,7 +121,9 @@ node default {
   include graphviz
   include handbrake
   include heroku
+  include hipchat
   include istatmenus4
+  include iterm2::dev
   include java
   package { 'macvim':
     ensure          => installed,
@@ -140,6 +141,7 @@ node default {
   include skype
   # include sparrow
   # include sublime_text_2
+  include textual
   include vagrant
   # vagrant::plugin { 'vagrant-vmware-fusion':
   #   license => 'puppet:///modules/fusion.lic',
@@ -193,6 +195,7 @@ node default {
     creates => "${user_home}/.aliases",
     cwd     => $dotfiles_dir,
     command => './install',
+    require => Repository['dotfiles'],
   }
 
   repository { 'vimfiles':
@@ -206,24 +209,28 @@ node default {
     creates => "${user_home}/.vim",
     cwd     => $vimfiles_dir,
     command => './install',
+    require => Repository['vimfiles'],
   }
 
   ### dotjs ###
-  $dotjs_dir = "${workspace_dir}/dotjs"
+  # $dotjs_dir = "${workspace_dir}/dotjs"
 
-  repository { 'dotjs':
-    source   => 'defunkt/dotjs',
-    path     => $dotjs_dir,
-    provider => 'git',
-    require  => Package['Chrome'],
-  }
+  # repository { 'dotjs':
+  #   source   => 'defunkt/dotjs',
+  #   path     => $dotjs_dir,
+  #   provider => 'git',
+  #   require  => [
+  #     File[$workspace_dir],
+  #     Package['Chrome'],
+  #   ]
+  # }
 
-  exec { 'install dotjs':
-    cwd     => $dotjs_dir,
-    command => "echo 'y' | ${system_rake} install",
-    creates => "${user_home}/Library/LaunchAgents/com.github.dotjs.plist",
-    require => Repository['dotjs'],
-  }
+  # exec { 'install dotjs':
+  #   cwd     => $dotjs_dir,
+  #   command => "echo 'y' | ${system_rake} install",
+  #   creates => "${user_home}/Library/LaunchAgents/com.github.dotjs.plist",
+  #   require => Repository['dotjs'],
+  # }
 
   ### Meslo ###
 

@@ -34,6 +34,11 @@ GITHUBTARBALL
     chrome (1.1.1)
 
 GITHUBTARBALL
+  remote: boxen/puppet-cloudapp
+  specs:
+    cloudapp (1.0.0)
+
+GITHUBTARBALL
   remote: boxen/puppet-daisy_disk
   specs:
     daisy_disk (1.0.0)
@@ -89,6 +94,11 @@ GITHUBTARBALL
     heroku (2.0.0)
 
 GITHUBTARBALL
+  remote: boxen/puppet-hipchat
+  specs:
+    hipchat (1.0.8)
+
+GITHUBTARBALL
   remote: boxen/puppet-homebrew
   specs:
     homebrew (1.4.1)
@@ -102,6 +112,11 @@ GITHUBTARBALL
   remote: boxen/puppet-istatmenus4
   specs:
     istatmenus4 (1.0.0)
+
+GITHUBTARBALL
+  remote: boxen/puppet-iterm2
+  specs:
+    iterm2 (1.0.3)
 
 GITHUBTARBALL
   remote: boxen/puppet-java
@@ -174,9 +189,19 @@ GITHUBTARBALL
     sudo (1.0.0)
 
 GITHUBTARBALL
+  remote: boxen/puppet-swig
+  specs:
+    swig (1.0.0)
+
+GITHUBTARBALL
+  remote: boxen/puppet-textual
+  specs:
+    textual (3.2.1)
+
+GITHUBTARBALL
   remote: boxen/puppet-vagrant
   specs:
-    vagrant (2.0.10)
+    vagrant (2.0.12)
 
 GITHUBTARBALL
   remote: boxen/puppet-virtualbox
@@ -221,6 +246,7 @@ DEPENDENCIES
   boxen (= 3.0.2)
   caffeine (= 1.0.0)
   chrome (= 1.1.1)
+  cloudapp (= 1.0.0)
   daisy_disk (= 1.0.0)
   dnsmasq (= 1.0.0)
   dropbox (= 1.1.1)
@@ -232,10 +258,12 @@ DEPENDENCIES
   graphviz (= 1.0.0)
   handbrake (= 1.0.0)
   heroku (= 2.0.0)
+  hipchat (= 1.0.8)
   homebrew (= 1.4.1)
   hub (= 1.0.3)
   inifile (= 1.0.0)
   istatmenus4 (= 1.0.0)
+  iterm2 (= 1.0.3)
   java (= 1.1.2)
   mplayerx (= 1.0.0)
   nodejs (= 3.2.9)
@@ -252,7 +280,9 @@ DEPENDENCIES
   stdlib (= 4.1.0)
   sublime_text_2 (= 1.1.2)
   sudo (= 1.0.0)
-  vagrant (= 2.0.10)
+  swig (= 1.0.0)
+  textual (= 3.2.1)
+  vagrant (= 2.0.12)
   virtualbox (= 1.0.5)
   viscosity (= 1.0.0)
   vlc (= 1.0.4)
