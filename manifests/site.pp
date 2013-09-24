@@ -162,6 +162,10 @@ node default {
     ensure => directory,
   }
 
+  file { "${user_home}/gocode":
+    ensure => directory,
+  }
+
   ### SSH ###
   $ssh_dir = "${user_home}/.ssh"
   $known_hosts_dir = "${ssh_dir}/known_hosts"
