@@ -96,6 +96,7 @@ node default {
       'ctags',
       'findutils',
       'gnu-tar',
+      'highlight',
       'mercurial',
       's3cmd',
       'the_silver_searcher',
