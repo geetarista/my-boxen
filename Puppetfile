@@ -57,7 +57,7 @@ github "istatmenus4",     "1.0.0"
 github "iterm2",          "1.0.3"
 github "java",            "1.1.2"
 # github "macvim",        "1.0.0"
-github "mplayerx",        "1.0.0"
+github "mplayerx",        "1.0.1"
 github "pcre",            "1.0.0" # Needed for graphviz
 github "pkgconfig",       "1.0.0" # Lots of modules depend on this
 github "python",          "1.2.1"
