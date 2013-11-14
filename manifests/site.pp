@@ -263,6 +263,61 @@ node default {
   # defaults write com.apple.finder QLEnableTextSelection -bool true; killall Finder
   # https://github.com/toland/qlmarkdown/
 
+  ### OS Settings ###
+
+  ## Global ##
+
+  # include osx::global::disable_key_press_and_hold
+  include osx::global::enable_keyboard_control_access
+  include osx::global::expand_print_dialog
+  include osx::global::expand_save_dialog
+  include osx::global::disable_remote_control_ir_receiver
+  # include osx::global::disable_autocorrect
+
+  ## Dock ##
+
+  # include osx::dock::2d
+  include osx::dock::autohide
+  # include osx::dock::clear_dock
+  # include osx::dock::disable
+  # include osx::dock::dim_hidden_apps
+  # include osx::dock::hide_indicator_lights
+
+  class { 'osx::dock::icon_size':
+    size => 70,
+  }
+
+  ## Finder ##
+
+  # include osx::finder::show_external_hard_drives_on_desktop
+  # include osx::finder::show_hard_drives_on_desktop
+  # include osx::finder::show_mounted_servers_on_desktop
+  # include osx::finder::show_removable_media_on_desktop
+  # include osx::finder::show_all_on_desktop
+  # include osx::finder::empty_trash_securely
+  include osx::finder::unhide_library
+
+  ## Keyboard ##
+
+  class { 'osx::global::key_repeat_delay':
+    delay => 15,
+  }
+
+  class { 'osx::global::key_repeat_rate':
+    rate => 2,
+  }
+
+  ## Universal Access ##
+
+  include osx::universal_access::ctrl_mod_zoom
+  include osx::universal_access::enable_scrollwheel_zoom
+
+  ## Misc ##
+
+  include osx::disable_app_quarantine
+  include osx::no_network_dsstores
+  # include osx::software_update
+
   ### Boxen SRC_DIR ###
 
   file { "${boxen::config::srcdir}/our-boxen":
