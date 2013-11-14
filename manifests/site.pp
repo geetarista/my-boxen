@@ -57,6 +57,8 @@ Git::Config::Global <| title == "core.excludesfile" |> {
   value => "~/.gitignore",
 }
 
+$user_home = "/Users/${boxen_user}"
+
 node default {
   # core modules, needed for most things
   # include dnsmasq
@@ -134,6 +136,19 @@ node default {
       '--with-cscope',
     ];
   }
+  exec { 'link-macvim':
+    command => 'brew linkapps',
+    unless  => '/bin/test -L /Applications/MacVim.app',
+    require => Package['macvim'],
+  }
+  exec { 'cp-generic-icon':
+    command => "cp ${user_home}/Dropbox/system/MacVim-generic.icns /Applications/MacVim.app/Contents/Resources/MacVim-generic.icns",
+    require => Exec['link-macvim'],
+  }
+  exec { 'cp-icon':
+    command => "cp ${user_home}/Dropbox/system/MacVim.icns /Applications/MacVim.app/Contents/Resources/MacVim.icns",
+    require => Exec['link-macvim'],
+  }
   # include minecraft
   include mplayerx
   # include propane
@@ -153,7 +168,6 @@ node default {
   include xscope::2
 
   $system_rake = '/Library/Ruby/Gems/1.8/gems/rake-10.0.3/bin/rake'
-  $user_home = "/Users/${boxen_user}"
 
   file { '/usr/local':
     ensure => directory,
