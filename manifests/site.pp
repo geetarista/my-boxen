@@ -112,7 +112,8 @@ node default {
   include alfred
   include appcleaner
   include caffeine
-  include chrome::dev
+  include chrome
+  include chrome::canary
   include cloudapp
   include daisy_disk::1
   include dropbox
