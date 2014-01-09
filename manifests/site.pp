@@ -118,10 +118,10 @@ node default {
   include daisy_disk::1
   include dropbox
   include flux
-  # package { 'go':
-  #   ensure          => installed,
-  #   install_options => '--cross-compile-all',
-  # }
+  package { 'go':
+    ensure          => installed,
+    install_options => ['--cross-compile-all'],
+  }
   include graphviz
   include handbrake
   include heroku
