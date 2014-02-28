@@ -84,7 +84,7 @@ node default {
     'coffee-script',
     'mocha',
   ]
-  # nodejs::module { $node_modules: }
+  nodejs::module { $node_modules: }
 
   # default ruby versions
   ruby::version { '1.9.3': }
