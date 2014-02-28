@@ -63,9 +63,8 @@ node default {
   # core modules, needed for most things
   # include dnsmasq
   include git
-  # include hub
+  include hub
   # include nginx
-  include ruby
 
   # fail if FDE is not enabled
   if $::root_encrypted == 'no' {
@@ -79,18 +78,19 @@ node default {
     version => 'v0.10.21',
   }
   Nodejs::Module {
-    node_version => 'v0.10',
+    node_version => 'v0.10.21',
   }
   $node_modules = [
     'coffee-script',
     'mocha',
   ]
-  nodejs::module { $node_modules: }
+  # nodejs::module { $node_modules: }
 
   # default ruby versions
-  include ruby::2_0_0
+  ruby::version { '1.9.3': }
+  ruby::version { '2.1.1': }
   class { 'ruby::global':
-    version => '2.0.0'
+    version => '2.1.1'
   }
 
   # common, useful packages
@@ -144,33 +144,41 @@ node default {
     unless  => '/bin/test -L /Applications/MacVim.app',
     require => Package['macvim'],
   }
+
+  $macvim_icon_checksum = 'bf7f52d27687743254cf0b31bb27c8ce'
+  $macvim_icon_file = '/Applications/MacVim.app/Contents/Resources/MacVim.icns'
+  $macvim_icon_generic = '/Applications/MacVim.app/Contents/Resources/MacVim-generic.icns'
   exec { 'cp-generic-icon':
-    command => "cp ${user_home}/Dropbox/system/MacVim-generic.icns /Applications/MacVim.app/Contents/Resources/MacVim-generic.icns",
+    command => "cp ${user_home}/Dropbox/system/MacVim-generic.icns ${macvim_icon_generic}",
+    unless  => "/bin/test \"`md5sum ${macvim_icon_generic}`\" = \"${macvim_icon_checksum}  ${macvim_icon_generic}\"",
     require => Exec['link-macvim'],
   }
   exec { 'cp-icon':
-    command => "cp ${user_home}/Dropbox/system/MacVim.icns /Applications/MacVim.app/Contents/Resources/MacVim.icns",
+    command => "cp ${user_home}/Dropbox/system/MacVim.icns ${macvim_icon_file}",
+    unless  => "/bin/test \"`md5sum ${macvim_icon_file}`\" = \"${macvim_icon_checksum}  ${macvim_icon_file}\"",
     require => Exec['link-macvim'],
   }
-  # include minecraft
+
   include mplayerx
-  # include propane
   include python
   include rdio
-  include skype
-  # include sparrow
-  # include sublime_text_2
-  include textual
   include vagrant
-  # vagrant::plugin { 'vagrant-vmware-fusion':
-  #   license => 'puppet:///modules/fusion.lic',
-  # }
-  include virtualbox
   include viscosity
   include vlc
   include xscope::2
 
-  $system_rake = '/Library/Ruby/Gems/1.8/gems/rake-10.0.3/bin/rake'
+  # include minecraft
+  # include propane
+  # include skype
+  # include sparrow
+  # include sublime_text_2
+  # include textual
+  # include virtualbox
+  # vagrant::plugin { 'vagrant-vmware-fusion':
+  #   license => 'puppet:///modules/fusion.lic',
+  # }
+
+  # $system_rake = '/Library/Ruby/Gems/1.8/gems/rake-10.0.3/bin/rake'
 
   file { '/usr/local':
     ensure => directory,

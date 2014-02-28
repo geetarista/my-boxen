@@ -1,15 +1,15 @@
 #!/usr/bin/env ruby
 # Show the path to your manifest in Boxen, creating if necessary.
 
-user = ENV["GH_LOGIN"]
+user = ENV["BOXEN_GITHUB_LOGIN"]
 
 unless user
-  abort "GH_LOGIN is not defined. Please re-run Boxen."
+  abort "BOXEN_GITHUB_LOGIN is not defined. Please re-run Boxen."
 end
 
 editor = ENV["VISUAL"] || ENV["EDITOR"]
 home   = ENV["BOXEN_HOME"] + "/repo"
-user   = user.downcase
+user   = user.downcase.tr('-', '_')
 path   = "#{home}/modules/people/manifests/#{user}.pp"
 
 unless File.exist? path
@@ -19,6 +19,6 @@ unless File.exist? path
   end
 end
 
-exec(editor, path) if editor && system("test -t 1")
+exec([editor, path].join(' ')) if editor && system("test -t 1")
 
 puts path
