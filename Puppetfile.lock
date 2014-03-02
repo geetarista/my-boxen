@@ -126,7 +126,7 @@ GITHUBTARBALL
 GITHUBTARBALL
   remote: boxen/puppet-nodejs
   specs:
-    nodejs (3.5.0)
+    nodejs (3.6.0)
 
 GITHUBTARBALL
   remote: boxen/puppet-openssl
@@ -251,7 +251,7 @@ DEPENDENCIES
   java (= 1.2.0)
   module-data (= 0.0.1)
   mplayerx (= 1.0.1)
-  nodejs (= 3.5.0)
+  nodejs (= 3.6.0)
   openssl (= 1.0.0)
   osx (= 2.2.2)
   pcre (= 1.0.0)
