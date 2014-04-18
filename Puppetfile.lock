@@ -14,6 +14,11 @@ GITHUBTARBALL
     appcleaner (1.0.0)
 
 GITHUBTARBALL
+  remote: boxen/puppet-arduino
+  specs:
+    arduino (1.0.1)
+
+GITHUBTARBALL
   remote: boxen/puppet-boxen
   specs:
     boxen (3.3.8)
@@ -227,6 +232,7 @@ DEPENDENCIES
   adium (= 1.3.0)
   alfred (= 1.1.7)
   appcleaner (= 1.0.0)
+  arduino (= 1.0.1)
   boxen (= 3.3.8)
   caffeine (= 1.0.0)
   chrome (= 1.1.2)

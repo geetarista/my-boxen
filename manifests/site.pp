@@ -112,6 +112,7 @@ node default {
 
   include adium
   include alfred
+  include arduino
   include appcleaner
   include caffeine
   include chrome

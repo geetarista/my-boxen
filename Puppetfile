@@ -58,6 +58,7 @@ github "xquartz",    "1.1.1"
 
 github "adium",           "1.3.0"
 github "alfred",          "1.1.7"
+github "arduino",         "1.0.1"
 github "appcleaner",      "1.0.0"
 github "caffeine",        "1.0.0"
 github "chrome",          "1.1.2"
