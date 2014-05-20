@@ -214,6 +214,11 @@ GITHUBTARBALL
     xscope (1.0.0)
 
 GITHUBTARBALL
+  remote: dieterdemeyer/puppet-unarchiver
+  specs:
+    unarchiver (1.4.0)
+
+GITHUBTARBALL
   remote: puppetlabs/puppetlabs-inifile
   specs:
     inifile (1.0.1)
@@ -271,6 +276,7 @@ DEPENDENCIES
   stdlib (= 4.1.0)
   sudo (= 1.0.0)
   swig (= 1.0.0)
+  unarchiver (= 1.4.0)
   vagrant (= 3.0.5)
   viscosity (= 1.0.0)
   vlc (= 1.0.5)

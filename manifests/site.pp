@@ -164,6 +164,7 @@ node default {
   include mplayerx
   include python
   include rdio
+  include unarchiver
   include vagrant
   include viscosity
   include vlc

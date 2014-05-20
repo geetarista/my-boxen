@@ -82,6 +82,7 @@ github "python",          "1.3.0"
 github "rdio",            "1.0.0"
 github "repository",      "2.3.0"
 github "swig",            "1.0.0" # Needed for graphviz
+github "unarchiver",      "1.4.0", :repo => "dieterdemeyer/puppet-unarchiver"
 github "vagrant",         "3.0.5"
 github "viscosity",       "1.0.0"
 github "vlc",             "1.0.5"
