@@ -102,6 +102,7 @@ node default {
       'findutils',
       'gnu-tar',
       'highlight',
+      'jq',
       'mercurial',
       's3cmd',
       'the_silver_searcher',
