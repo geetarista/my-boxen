@@ -189,6 +189,11 @@ GITHUBTARBALL
     swig (1.0.0)
 
 GITHUBTARBALL
+  remote: boxen/puppet-utorrent
+  specs:
+    utorrent (1.1.1)
+
+GITHUBTARBALL
   remote: boxen/puppet-vagrant
   specs:
     vagrant (3.0.5)
@@ -277,6 +282,7 @@ DEPENDENCIES
   sudo (= 1.0.0)
   swig (= 1.0.0)
   unarchiver (= 1.4.0)
+  utorrent (= 1.1.1)
   vagrant (= 3.0.5)
   viscosity (= 1.0.0)
   vlc (= 1.0.5)

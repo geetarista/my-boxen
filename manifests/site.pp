@@ -166,6 +166,7 @@ node default {
   include python
   include rdio
   include unarchiver
+  include utorrent
   include vagrant
   include viscosity
   include vlc
