@@ -163,6 +163,7 @@ node default {
   }
 
   include mplayerx
+  homebrew::tap { 'monochromegane/pt': }
   include python
   include rdio
   include unarchiver
